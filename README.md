@@ -45,6 +45,7 @@ If the image is of a list bullet or other trivial icons, it is recommended to si
 Omit type attributes for style sheets and scripts.
 Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
+        
         ```Ruby
         class Amenity < ActiveRecord::Base
             belongs_to :property, :select => 'id,name'
