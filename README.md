@@ -51,12 +51,16 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies t
 * Active record query optimization in models
   * Use select with has_many and belongs_to on Active Record Associations
   * Using the select parameter in Active Record association, you can speed up your application about 50% and more.
-        ```Ruby
-        class Amenity < ActiveRecord::Base
-            belongs_to :property, :select => 'id,name'
-        end
-
-        class Property < ActiveRecord::Base
-            has_many :amenities, :select => 'id,name'
-        end
+        ```Html
+        <!-- Not recommended -->
+        <link rel="stylesheet" href="//www.google.com/css/maia.css"
+         type="text/css">
+        <!-- Recommended -->
+        <link rel="stylesheet" href="//www.google.com/css/maia.css">
+        
+        <!-- Not recommended -->
+        <script src="//www.google.com/js/gweb/analytics/autotrack.js"
+         type="text/javascript"></script>
+        <!-- Recommended -->
+        <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
         ```
