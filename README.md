@@ -45,17 +45,12 @@ If the image is of a list bullet or other trivial icons, it is recommended to si
 Omit type attributes for style sheets and scripts.
 Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
-
         ```Ruby
-        <!-- Not recommended -->
-        <link rel="stylesheet" href="//www.google.com/css/maia.css"
-         type="text/css">
-        <!-- Recommended -->
-        <link rel="stylesheet" href="//www.google.com/css/maia.css">
-        
-        <!-- Not recommended -->
-        <script src="//www.google.com/js/gweb/analytics/autotrack.js"
-         type="text/javascript"></script>
-        <!-- Recommended -->
-        <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+        class Amenity < ActiveRecord::Base
+            belongs_to :property, :select => 'id,name'
+        end
+
+        class Property < ActiveRecord::Base
+            has_many :amenities, :select => 'id,name'
+        end
         ```
