@@ -45,7 +45,12 @@ If the image is of a list bullet or other trivial icons, it is recommended to si
 Omit type attributes for style sheets and scripts.
 Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
-        
+
+## Query Optimization
+
+* Active record query optimization in models
+  * Use select with has_many and belongs_to on Active Record Associations
+  * Using the select parameter in Active Record association, you can speed up your application about 50% and more.
         ```Ruby
         class Amenity < ActiveRecord::Base
             belongs_to :property, :select => 'id,name'
