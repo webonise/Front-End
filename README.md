@@ -53,14 +53,12 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies t
   * Using the select parameter in Active Record association, you can speed up your application about 50% and more.
         ```Html
         <!-- Not recommended -->
-        <link rel="stylesheet" href="//www.google.com/css/maia.css"
-         type="text/css">
+        <link rel="stylesheet" href="//www.google.com/css/maia.css" type="text/css">
         <!-- Recommended -->
         <link rel="stylesheet" href="//www.google.com/css/maia.css">
         
         <!-- Not recommended -->
-        <script src="//www.google.com/js/gweb/analytics/autotrack.js"
-         type="text/javascript"></script>
+        <script src="//www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script>
         <!-- Recommended -->
         <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
         ```
