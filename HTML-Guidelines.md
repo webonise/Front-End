@@ -2,9 +2,7 @@
 
 ##DOCTYPE
 1. Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. 
-2. `<!DOCTYPE html>`
-
-It's significantly simpler than most DOCTYPEs that you’ve seen – and that was intentional. 
+2. `<!DOCTYPE html>` It's significantly simpler than most DOCTYPEs that you’ve seen – and that was intentional. 
 A lot has changed in HTML5 in an attempt to make it even easier to develop a standards-based web page, 
 and it should really pay off in the end.
 
