@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [DOCTYPE](#DOCTYPE)
+1. [DOCTYPE](#doctype)
 2. [Naming Conventions](#naming-conventions)
 3. [Selectors](#selectors)
 4. [Properties](#properties)
