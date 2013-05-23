@@ -75,18 +75,22 @@ Using shorthand properties is useful for code efficiency and understandability.
 
 ```css
 /* Not recommended */
-border-top-style: none;
-font-family: Helvetica, Arial, serif;
-font-size: 13px;
-line-height: 18px;
-padding-bottom: 20px;
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 0;
+.example {
+    border-top-style: none;
+    font-family: Helvetica, Arial, serif;
+    font-size: 13px;
+    line-height: 18px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+}
 /* Recommended */
-border-top: 0;
-font: 13px/18px Helvetica, Arial, serif;
-padding: 0 10px 20px;
+.example {
+    border-top: 0;
+    font: 13px/18px Helvetica, Arial, serif;
+    padding: 0 10px 20px;
+}
 ```
 
 ###0 and units :
@@ -94,6 +98,8 @@ Omit unit specification after “0” values.
 Do not use units after 0 values unless they are required.
 
 ```css
+.example {
 margin: 0;
 padding: 0;
+}
 ```
