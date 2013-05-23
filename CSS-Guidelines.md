@@ -30,7 +30,8 @@ Use ID and class names that are as short as possible but as long as necessary.
 Try to convey what an ID or class is about while being as brief as possible.
 Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
 
-```/* Not recommended */
+```css
+/* Not recommended */
 #navigation {}
 .atr {}
 /* Recommended */
@@ -42,12 +43,14 @@ Using ID and class names this way contributes to acceptable levels of understand
 Avoid qualifying ID and class names with type selectors.
 Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.
 
-    /* Not recommended */
-    ul#example {}
-    div.error {}
-    /* Recommended */
-    #example {}
-    .error {}
+```css
+/* Not recommended */
+ul#example {}
+div.error {}
+/* Recommended */
+#example {}
+.error {}
+```
 
 
 ###Case sensitive CSS :
@@ -70,24 +73,27 @@ Use shorthand properties where possible.
 CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
 Using shorthand properties is useful for code efficiency and understandability.
 
-    /* Not recommended */
-    border-top-style: none;
-    font-family: Helvetica, Arial, serif;
-    font-size: 13px;
-    line-height: 18px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0;
-    /* Recommended */
-    border-top: 0;
-    font: 13px/18px Helvetica, Arial, serif;
-    padding: 0 10px 20px;
-
+```css
+/* Not recommended */
+border-top-style: none;
+font-family: Helvetica, Arial, serif;
+font-size: 13px;
+line-height: 18px;
+padding-bottom: 20px;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 0;
+/* Recommended */
+border-top: 0;
+font: 13px/18px Helvetica, Arial, serif;
+padding: 0 10px 20px;
+```
 
 ###0 and units :
 Omit unit specification after “0” values.
 Do not use units after 0 values unless they are required.
 
-    margin: 0;
-    padding: 0;
+```css
+margin: 0;
+padding: 0;
+```
