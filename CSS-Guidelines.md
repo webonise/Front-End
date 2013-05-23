@@ -20,6 +20,11 @@ Name your classes with camelCase.
 
 eg:
 
+```scss
+.block-name {}
+.block-name__child-name {}
+.block-name--modifier {}
+```
 ```.mainContent {}
 .editInfo {}
 ```
