@@ -1,5 +1,26 @@
 # HTML Guidelines
 
+## Table of Contents
+
+1. [DOCTYPE](#DOCTYPE)
+2. [Naming Conventions](#naming-conventions)
+3. [Selectors](#selectors)
+4. [Properties](#properties)
+   * [Ordering](#ordering)
+5. [Nesting](#nesting)
+6. [Indentation](#indentation)
+7. [File Structure](#file-structure)
+8. [Functions](#functions)
+9. [Mixins](#mixins)
+10. [Modules](#modulespackages)
+   * [File Structure](#file-structure-1)
+   * [Namespacing](#namespacing)
+   * [Module Entry Point](#module-entry-point)
+   * [Package Management](#package-management)
+   * [Load Paths](#load-paths)
+   * [Dependencies](#dependencies)
+11. [Definitions](#definitions)
+
 ###DOCTYPE
 1. Ideally, the HTML5 DOCTYPE should be used. It's supported in all modern browsers, and throws IE6 and IE7 into standards mode. 
 2. `<!DOCTYPE html>` It's significantly simpler than most DOCTYPEs that you’ve seen – and that was intentional. 
