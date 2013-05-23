@@ -1,5 +1,15 @@
 #CSS Guidelines
 
+## Table of Contents
+
+1. [ID and class name delimiters](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#id-and-class-name-delimiters-)
+2. [ID and class name style](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#id-and-class-name-style-)
+3. [Type selectors](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#type-selectors-)
+4. [Case sensitive CSS](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#case-sensitive-css-)
+5. [Ending your CSS declarations with ";"](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#ending-your-css-declarations-with-)
+6. [Shorthand properties](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#shorthand-properties-)
+7. [0 and units](https://github.com/webonise/Front-End/blob/master/CSS-Guidelines.md#0-and-units-)
+
 ###ID and class name delimiters :
 
 Use meaningful or generic ID and class names.
@@ -10,22 +20,22 @@ Name your classes with camelCase.
 
 eg:
 
-    .mainContent {}
-    .editInfo {}
-
+```.mainContent {}
+.editInfo {}
+```
 
 ###ID and class name style :
 Use ID and class names that are as short as possible but as long as necessary.
 Try to convey what an ID or class is about while being as brief as possible.
 Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
 
-    /* Not recommended */
-    #navigation {}
-    .atr {}
-    /* Recommended */
-    #nav {}
-    .author {}
-
+```/* Not recommended */
+#navigation {}
+.atr {}
+/* Recommended */
+#nav {}
+.author {}
+```
 
 ###Type selectors :
 Avoid qualifying ID and class names with type selectors.
