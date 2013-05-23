@@ -19,6 +19,14 @@ suffering on the part of the Microsoft Task Force of WaSP and of the Internet Ex
 I’m really glad that this is happening, though – the future of standards-based web development still 
 looks quite bright.
 
+###Encoding
+Use UTF-8 (no BOM).
+Make sure your editor uses UTF-8 as character encoding, without a byte order mark.
+
+Specify the encoding in HTML templates and documents via <meta charset="utf-8">. Do not specify the encoding of style sheets as these assume UTF-8.
+
+(More on encodings and when and how to specify them can be found in [Handling character encodings in HTML and CSS](http://www.w3.org/International/tutorials/tutorial-char-enc/).)
+
 ###Write Valid Semantic Markup
 1. Writing websites with clean, semantic HTML is something we wish we could always do. Sometimes we find ourselves limited 
 by the way pages were setup by our predecessors, or sometimes we're coding an HTML email. The validity of the HTML should 
