@@ -25,6 +25,7 @@ As we know today’s all websites used javascript for the smooth and in full fun
 		</div>
 	</noscript>
 	<!-- noscript tag ends -->
+```
 	
 Now lets see a situation, where we want to auto redirect the user on that above link or any other new page where  some information or other design without javascript code is present, So, can we do that…?
 
@@ -36,6 +37,7 @@ Here is one attribute of <noscript> tag is present where we can refresh the page
 	<noscript>
 		<meta http-equiv="refresh" content="0;url=/page-path or any link">
 	</noscript>
+```
 
 The above meta tag will redirect the user to the specified url it would be a external or any pages relative path in our project.
 
