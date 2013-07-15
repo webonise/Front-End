@@ -1,4 +1,4 @@
-# <noscript> tag
+# noscript tag
 
 As we know today’s all websites used javascript for the smooth and in full functionality running, but sometimes it may happen that on our desktop we are opening a website and we are unable to see most of the javascript functionality.
 					The reason is simple the web browsers javascript  functionality is most of the time is disabled, we have to manually enabled the javascript functionality. Now here is the key point to worry. What happen if the user is a non-technical person and he/she is barely know about the browsers setting except its normal use. So, what about for that users we can do, here this <noscript> tag is very handy to us as development perspective. Lets have a look to its use and feature:-
@@ -31,7 +31,7 @@ Now lets see a situation, where we want to auto redirect the user on that above 
 
 ## YES ofcourse!
 
-Here is one attribute of <noscript> tag is present where we can refresh the page and auto-redirect the user somewhere else (new page or any link). Lets see its syntax:
+Here is one attribute of noscript tag is present where we can refresh the page and auto-redirect the user somewhere else (new page or any link). Lets see its syntax:
 
 ```html
 	<noscript>
