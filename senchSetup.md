@@ -17,12 +17,13 @@
 
 ## Installation :
 
-   Step 1: Extract the Sencha touch-2.x zip file to your sencha projects directory �
+   Step 1: Extract the Sencha touch-2.x zip file to your sencha projects directory
 
    Step 2: The following command generates a new application with the namespace  MyApp  to
                   "/path/to/myapp":    
                  #  Make sure the current working directory is the Sencha Touch 2 directory	
                  cd /path/to/sencha-touch-2-directory
+
    Step 3:  sencha generate app MyApp /path/to/create/myapp  
                  [sencha generate app MyApp ../MyApp]
 
@@ -31,4 +32,4 @@
 
 
 ### Note:
-�If you need support for server-side scripting or PHP, you can get another web server such as�XAMPP. If you use XAMPP, put the files you want to serve in the�htdocs�directory.
+If you need support for server-side scripting or PHP, you can get another web server such as XAMPP. If you use XAMPP, put the files you want to serve in the htdocs directory.
