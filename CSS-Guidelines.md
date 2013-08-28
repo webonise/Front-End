@@ -202,7 +202,7 @@ __Cons__
 
 There are two options available with Google Webfonts. Both options have their downsides of course but they can be just as good to use as @font-face, it all depends on a projects needs.
 
-####Webfonts API◊
+####Webfonts API
 Google's Webfonts API essentially does the same thing as @font-face, it just does all the hard work for you, providing wider browser support.The major drawback to this method is the very small font library it uses. To make it work all you need to do is include the stylesheet + the font name.
 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
