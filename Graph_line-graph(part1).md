@@ -73,16 +73,18 @@ Let’s see the examples of both ways.
 ```
 #### Using Constructor Highcharts.Chart:
 ```html
-    $(document).ready(function(){
-        $(function () {
-            var lineChart = new Highcharts.Chart({
-                chart: {
-                      type: 'line'
-                },
-                     // same as the above code//
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                    chart: {
+                          type: 'line'
+                    },
+                         // same as the above code//
+                });
             });
         });
-    });
+    </script>
 ```
 
 ### The above code will render like this:
