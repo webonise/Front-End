@@ -93,7 +93,7 @@ Let’s see the examples of both ways.
     </script>
 ```
 
-### The above code will render like this:
+#### The above code will render like this:
     image will come here
 
 The second method is used basically when we use Moo Tools or Prototype, instead of $(function() syntax.
@@ -168,3 +168,27 @@ In graph that is called the credit. So, if we want to remove that credits then w
         });
     </script>
 ```
+#### Giving visibility to the y-axis line;
+In the above example we can see that the y-axis values don’t have the vertical line, it is because the lineWidth option of the line on y-axis has zero value,
+we can give it a value to make it visible. Remember right now we are modifying the y-axis property so the lineWidht property will be in the y-axis scope,
+lets see:
+```html
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                   credits: {
+                            enabled : false
+                   },
+                   yAxis: {
+                         lineWidth: 1
+                   },
+                });
+            });
+        });
+    </script>
+```
+#### The above code will render like this:
+    image will come here
+You can see now there is a y-Axis line has come and making the credits options false we have hid the highcharts advertise.
+
