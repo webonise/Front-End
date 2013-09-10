@@ -192,3 +192,85 @@ lets see:
     image will come here
 You can see now there is a y-Axis line has come and making the credits options false we have hid the highcharts advertise.
 
+#### Giving color to the graph lines:
+The color which is visible right now for the lines is default color given by the Highcharts. Now how to change the line color?
+There are two ways of giving the color by using global object options or by individually giving color to the lines. Let’s check the both options:
+a) Global Declaration:
+```html
+    <script>
+        $(document).ready(function(){
+            Highcharts.setOptions({
+                            colors:['#008015', '#f5531a']
+                    }); // global declaration of the color
+
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                   credits: {
+                            enabled : false
+                   },
+                   yAxis: {
+                         lineWidth: 1
+                   },
+                   series: [{
+                          name: 'Jane',
+                          data: [1, 0, 4]
+                  }, {
+                          name: 'John',
+                          data: [5, 7, 3]
+                  }]
+                });
+            });
+        });
+    </script>
+```
+Now above global declaration will apply on every chart lines as we have defined two colors in the variable now that two colors will apply on the first two
+data on the series options respectively.
+
+#### The above code will render like this:
+    image will come here
+
+b) Indiviual Declaration:
+```html
+    <script>
+        $(document).ready(function(){
+            Highcharts.setOptions({
+                            colors:['#008015', '#f5531a']
+                    }); // global declaration of the color
+
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                   credits: {
+                            enabled : false
+                   },
+
+                   yAxis: {
+                         lineWidth: 1
+                   },
+                   series: [{
+                          name: 'Jane',
+                          data: [1, 0, 4],
+                         color: '#cde123'
+                  }, {
+                          name: 'John',
+                          data: [5, 7, 3],
+                          color: '#23c4e1'
+                  }]
+                });
+            });
+        });
+    </script>
+```
+Now here I have defined the particular line color inside the series options separately. Now this declaration will override the global color declaration.
+
+#### The above code will render like this:
+    image will come here
+
+
+### To be continues...........
+####precap:-
+1) How to remove the graph background.
+
+2) How to insert image in the graph.
+
+3) How to hide and show the graph lines on external click events.
+
