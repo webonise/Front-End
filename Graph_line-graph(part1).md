@@ -267,7 +267,7 @@ Now here I have defined the particular line color inside the series options sepa
     image will come here
 
 
-### To be continues...........
+### To be continued...........
 ####precap:-
 1) How to remove the graph background.
 
