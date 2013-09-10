@@ -189,7 +189,8 @@ lets see:
     </script>
 ```
 #### The above code will render like this:
-    image will come here
+![ScreenShot](image/y-axis_line.jpg)
+
 You can see now there is a y-Axis line has come and making the credits options false we have hid the highcharts advertise.
 
 #### Giving color to the graph lines:
@@ -228,7 +229,7 @@ Now above global declaration will apply on every chart lines as we have defined 
 data on the series options respectively.
 
 #### The above code will render like this:
-    image will come here
+![ScreenShot](image/line_color_global.jpg)
 
 b) Indiviual Declaration:
 ```html
@@ -264,7 +265,7 @@ b) Indiviual Declaration:
 Now here I have defined the particular line color inside the series options separately. Now this declaration will override the global color declaration.
 
 #### The above code will render like this:
-     image will come here
+![ScreenShot](image/line_color_individual.jpg)
 
 ### To be continued...........
 ####precap:-
