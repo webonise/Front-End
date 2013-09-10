@@ -4,17 +4,17 @@ As we are all went through some of the projects in which graph for data represen
 developers end. So to fasten up the development process we can also implement the graphs by ourselves,
 just need to use some jQuery code and modify it as per our need. Let’s have a look to the process.
 ## Implementing Graph Plug-in:
-	There are lots of plug-in for the implementations of the graphs are available on the net, but there is one graph plug-in which has its own full
-	development organization and very much extensible and customizable this is ‘Highcharts js’.
+There are lots of plug-in for the implementations of the graphs are available on the net, but there is one graph plug-in which has its own full
+development organization and very much extensible and customizable this is ‘Highcharts js’.
 
 ## Why Highcharts js?
-    The reason why I chose highcharts or suggest to use highcharts in the projects:
-   • Supports all kinds of graphs( line, spline, area, areaspline, column, bar, pie, scatter, angular gauges, arearange, areasplinerange, columnrange, bubble, box plot, error bars, funnel, waterfall and polar chart) .
-   • Highly rich and customizable.
-   • Support till IE-6+ as uses VML(Vector Markup Language) rendering (which is very important, from our point of view).
-   • Easily supportive with the php or any other programming language.
-   • Written in HTML5/Javascript, so very fast in rendering.
-   • Support for Android2.x +
+The reason why I chose highcharts or suggest to use highcharts in the projects:
+• Supports all kinds of graphs( line, spline, area, areaspline, column, bar, pie, scatter, angular gauges, arearange, areasplinerange, columnrange, bubble, box plot, error bars, funnel, waterfall and polar chart) .
+• Highly rich and customizable.
+• Support till IE-6+ as uses VML(Vector Markup Language) rendering (which is very important, from our point of view).
+• Easily supportive with the php or any other programming language.
+• Written in HTML5/Javascript, so very fast in rendering.
+• Support for Android2.x +
 
 So, we are going to see the graph implementation of Basic Line and Pie Chart (Doughnut chart).
 
