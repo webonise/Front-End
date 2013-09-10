@@ -264,8 +264,7 @@ b) Indiviual Declaration:
 Now here I have defined the particular line color inside the series options separately. Now this declaration will override the global color declaration.
 
 #### The above code will render like this:
-![ScreenShot]()
-
+     image will come here
 
 ### To be continued...........
 ####precap:-
