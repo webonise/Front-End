@@ -39,7 +39,6 @@ ii) Second create a new object of the highchart using constructor Highcharts.Cha
 Let’s see the examples of both ways.
 #### Using id:
 ```html
-	
 	<script>
         $(document).ready(function(){
             $(function () {
@@ -74,16 +73,16 @@ Let’s see the examples of both ways.
 ```
 #### Using Constructor Highcharts.Chart:
 ```html
-        $(document).ready(function(){
-            $(function () {
-                var lineChart = new Highcharts.Chart({
-                    chart: {
-                          type: 'line'
-                    },
-                         // same as the above code//
-                });
+    $(document).ready(function(){
+        $(function () {
+            var lineChart = new Highcharts.Chart({
+                chart: {
+                      type: 'line'
+                },
+                     // same as the above code//
             });
         });
+    });
 ```
 
 ### The above code will render like this:
