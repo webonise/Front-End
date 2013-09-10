@@ -264,7 +264,7 @@ b) Indiviual Declaration:
 Now here I have defined the particular line color inside the series options separately. Now this declaration will override the global color declaration.
 
 #### The above code will render like this:
-    image will come here
+![ScreenShot](http://www.mcnews.com.au/Wallpaper/BMW/K1300R/BMW_K1300R_RHF_2_1280.jpg)
 
 
 ### To be continued...........
