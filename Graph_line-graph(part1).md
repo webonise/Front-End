@@ -94,7 +94,7 @@ Let’s see the examples of both ways.
 ```
 
 #### The above code will render like this:
-    image will come here
+![ScreenShot](image/Line_BasicEg.jpg)
 
 The second method is used basically when we use Moo Tools or Prototype, instead of $(function() syntax.
 ###for example:
@@ -264,7 +264,7 @@ b) Indiviual Declaration:
 Now here I have defined the particular line color inside the series options separately. Now this declaration will override the global color declaration.
 
 #### The above code will render like this:
-![ScreenShot](http://www.mcnews.com.au/Wallpaper/BMW/K1300R/BMW_K1300R_RHF_2_1280.jpg)
+![ScreenShot]()
 
 
 ### To be continued...........
