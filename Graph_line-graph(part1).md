@@ -9,12 +9,13 @@ development organization and very much extensible and customizable this is ‘Hi
 
 ## Why Highcharts js?
 The reason why I chose highcharts or suggest to use highcharts in the projects:
-    • Supports all kinds of graphs( line, spline, area, areaspline, column, bar, pie, scatter, angular gauges, arearange, areasplinerange, columnrange, bubble, box plot, error bars, funnel, waterfall and polar chart) .
-    • Highly rich and customizable.
-    • Support till IE-6+ as uses VML(Vector Markup Language) rendering (which is very important, from our point of view).
-    • Easily supportive with the php or any other programming language.
-    • Written in HTML5/Javascript, so very fast in rendering.
-    • Support for Android2.x +
+
+• Supports all kinds of graphs( line, spline, area, areaspline, column, bar, pie, scatter, angular gauges, arearange, areasplinerange, columnrange, bubble, box plot, error bars, funnel, waterfall and polar chart) .
+• Highly rich and customizable.
+• Support till IE-6+ as uses VML(Vector Markup Language) rendering (which is very important, from our point of view).
+• Easily supportive with the php or any other programming language.
+• Written in HTML5/Javascript, so very fast in rendering.
+• Support for Android2.x +
 
 So, we are going to see the graph implementation of Basic Line and Pie Chart (Doughnut chart).
 
