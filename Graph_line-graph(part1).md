@@ -195,6 +195,7 @@ You can see now there is a y-Axis line has come and making the credits options f
 #### Giving color to the graph lines:
 The color which is visible right now for the lines is default color given by the Highcharts. Now how to change the line color?
 There are two ways of giving the color by using global object options or by individually giving color to the lines. Let’s check the both options:
+
 a) Global Declaration:
 ```html
     <script>
