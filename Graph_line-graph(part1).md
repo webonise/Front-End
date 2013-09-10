@@ -94,6 +94,7 @@ The second method is used basically when we use Moo Tools or Prototype, instead 
 ###for example:
 #### MooTools
 ```html
+    <script>
         $(document).ready(function(){
             window.addEvent('domready', function() {
                var chart1 = new Highcharts.Chart({
@@ -103,9 +104,11 @@ The second method is used basically when we use Moo Tools or Prototype, instead 
                ...
             });
         });
+    </script>
 ```
 #### Prototype
 ```html
+    <script>
         $(document).ready(function(){
             document.observe("dom:loaded", function() {
                var chart1 = new Highcharts.Chart({
@@ -115,42 +118,47 @@ The second method is used basically when we use Moo Tools or Prototype, instead 
                ...
             });
         });
+    </script>
 ```
 
 ## What is Option Object?
-    When you initialize the chart using its constructor Highcharts.Chart, the options object is the first parameter you pass.
+When you initialize the chart using its constructor Highcharts.Chart, the options object is the first parameter you pass.
 
 ###Let’s see the basic x-axis and y-axis value modifications:-
-    #### X-Axis Modifications:
-            1) Setting up the x-axis value(categories):
-                Default Values: 0 2 4….
-                Now we can set this x-axis value or categories by passing the values to the categories array:
-                ```html
-                        $(document).ready(function(){
-                            $(function () {
-                                var lineChart = new Highcharts.Chart({
-                                 xAxis: {
-                                                categories: ['Apples', 'Bananas', 'Oranges']
-                                            },
-                                  credits: {
-                                            enabled : false
-                                   }
-                                });
-                            });
-                        });
-                ```
-###Let’s see what basic modification we can do in Graph regarding look and feel:-
-    #### • Removing the Highchart.com add in right-Bottom of graph:
-           As we can see on the above graph there is advertisement of graph coming on the right-bottom side of graph.
-           In graph that is called the credit. So, if we want to remove that credits then we have to false the credit option.
-            ```html
-                $(document).ready(function(){
-                    $(function () {
-                        var lineChart = new Highcharts.Chart({
-                           credits: {
-                                    enabled : false   // this line will hide the highchart.js Ad from bottom-right corner.
-                           }
-                        });
-                    });
+#### X-Axis Modifications:
+1) Setting up the x-axis value(categories):
+Default Values: 0 2 4….
+Now we can set this x-axis value or categories by passing the values to the categories array:
+```html
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                 xAxis: {
+                                categories: ['Apples', 'Bananas', 'Oranges']
+                            },
+                  credits: {
+                            enabled : false
+                   }
                 });
-            ```
+            });
+        });
+    </script>
+```
+###Let’s see what basic modification we can do in Graph regarding look and feel:-
+#### Removing the Highchart.com add in right-Bottom of graph:
+As we can see on the above graph there is advertisement of graph coming on the right-bottom side of graph.
+In graph that is called the credit. So, if we want to remove that credits then we have to false the credit option.
+```html
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+                   credits: {
+                            enabled : false   // this line will hide the highchart.js Ad from bottom-right corner.
+                   }
+                });
+            });
+        });
+    </script>
+```
