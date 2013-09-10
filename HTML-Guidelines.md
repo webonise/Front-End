@@ -58,7 +58,7 @@ The `<img>` tag requires alt text to both validate and meet accessibility guidel
 If the image is of a list bullet or other trivial icons, it is recommended to simply leave the alt attribute empty, but still present. A screenreader will then ignore it, as opposed to having to read out "bullet" 20 times.
 
 ```html
-<img src="dog.gif" alt="Fido and I at the park!"
+<img src="dog.gif" alt="Fido and I at the park!"/>
 <!-- good, descriptive -->
 
 <img src="bullet.gif" alt="bullet" />
