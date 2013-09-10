@@ -124,7 +124,7 @@ The second method is used basically when we use Moo Tools or Prototype, instead 
 ## What is Option Object?
 When you initialize the chart using its constructor Highcharts.Chart, the options object is the first parameter you pass.
 
-###Let’s see the basic x-axis and y-axis value modifications:-
+###Let’s see the basic x-axis value modifications:-
 #### X-Axis Modifications:
 1) Setting up the x-axis value(categories):
 Default Values: 0 2 4….
