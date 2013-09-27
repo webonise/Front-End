@@ -313,11 +313,56 @@ Just add a property(option) 'gridLineWidth:0' in the yAxis: object.
 ![ScreenShot](image/Background_line_removale.jpg)
 
 
+#### How to add Image to your graph.
+It is possible that sometimes we will get the requirement to add the image to our graph to show some changes or make our graph more interactive. Lets see how we can achieve that requirement. We have to do certain things:
+1) First call the event option inside the chart object
+2) In that event option we have to render that image (call that image with absolute path) inside a function, lets see the syntax:
 
+Assume in the above graph we are showing a image of Green Line.
+
+```html
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+		   chart:{
+                        renderTo:'basicLineChart',
+                        type:'line',
+			events: {
+                 	    load: function () {
+                        	  this.renderer.image('image/lineGraphPath.png',250, 12, 11, 259)// (left, top, width, height) these are the values passed.
+      		                  .add();
+                     		}
+                	}
+                    },
+                   credits: {
+                            enabled : false
+                   },
+
+                   yAxis: {
+                         lineWidth: 1,
+			 gridLineWidth: 0
+                   },
+                   series: [{
+                          name: 'Jane',
+                          data: [1, 0, 4],
+                         color: '#cde123'
+                  }, {
+                          name: 'John',
+                          data: [5, 7, 3],
+                          color: '#23c4e1'
+                  }]
+                });
+            });
+        });
+    </script>
+```
+#### The above code will render like this:
+![ScreenShot](image/image_render.jpg)
+
+you can see the green line with top arrow is coming inside the graph
 
 ### To be continued...........
 ####precap:-
-1) How to insert image in the graph.
-
-2) How to hide and show the graph lines on external click events.
+1) How to hide and show the graph lines on external click events.
 
