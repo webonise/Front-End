@@ -371,7 +371,10 @@ In the line graph the lines in the series object is placed as array indexes, say
 So, we can access it like series[0], series[1] and so on......
 
 Lets add two buttons 'Hide Yellow' and 'Hide Blue' on the top of the graph and give them an id to access it on javascript. As shown below.
+
 ![ScreenShot](image/hide_show_btn_image.jpg)
+
+Now on click on the buttons we are going to hide and show (toggle) the graph lines:
 
 Lets see the code:
 <script>
@@ -406,7 +409,34 @@ Lets see the code:
                           color: '#23c4e1'
                   }]
                 });
+
+		// hide and show the line graph lines on the external button clicks
+	        $('#btnAppeared').toggle(
+        	    function(){
+                	$(this).parent().addClass('btnActive');
+                	lineChart.series[0].hide();
+	            },
+	            function (){
+        	        $(this).parent().removeClass('btnActive');
+	                lineChart.series[0].show();
+	            }
+	        );
+
+	        $('#btnFailed').toggle(
+	            function(){
+	                $(this).parent().addClass('btnActive');
+	                lineChart.series[1].hide();
+	            },
+	            function (){
+	                $(this).parent().removeClass('btnActive');
+	                lineChart.series[1].show();
+	            }
+	        );
             });
         });
     </script>
 ```
+Here you can see that by using lineChart object here accessed the series array. So when click on button respective line will hide and show.
+
+Hiding Yellow Line:
+![ScreenShot](image/hide_yellow_line.jpg)
