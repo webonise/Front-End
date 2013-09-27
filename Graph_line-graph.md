@@ -1,4 +1,4 @@
-# Graphs Implementation
+﻿# Graphs Implementation
 
 As we are all went through some of the projects in which graph for data representation has been used, and we usually left that graph implementations on
 developers end. So to fasten up the development process we can also implement the graphs by ourselves,
@@ -207,6 +207,10 @@ a) Global Declaration:
 
             $(function () {
                 var lineChart = new Highcharts.Chart({
+		   chart:{
+                        renderTo:'basicLineChart',
+                        type:'line'
+                    },
                    credits: {
                             enabled : false
                    },
@@ -241,6 +245,10 @@ b) Indiviual Declaration:
 
             $(function () {
                 var lineChart = new Highcharts.Chart({
+		   chart:{
+                        renderTo:'basicLineChart',
+                        type:'line'
+                    },
                    credits: {
                             enabled : false
                    },
@@ -267,11 +275,49 @@ Now here I have defined the particular line color inside the series options sepa
 #### The above code will render like this:
 ![ScreenShot](image/line_color_individual.jpg)
 
+#### How to remove the graph background
+Now here you can see that a horizontal line behind the graphs line are coming, so this is the default background of the graph lets see how to remove it!
+Just add a property(option) 'gridLineWidth:0' in the yAxis: object.
+```html
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+		   chart:{
+                        renderTo:'basicLineChart',
+                        type:'line'
+                    },
+                   credits: {
+                            enabled : false
+                   },
+
+                   yAxis: {
+                         lineWidth: 1,
+			 gridLineWidth: 0
+                   },
+                   series: [{
+                          name: 'Jane',
+                          data: [1, 0, 4],
+                         color: '#cde123'
+                  }, {
+                          name: 'John',
+                          data: [5, 7, 3],
+                          color: '#23c4e1'
+                  }]
+                });
+            });
+        });
+    </script>
+```
+#### The above code will render like this:
+![ScreenShot](image/Background_line_removale.jpg)
+
+
+
+
 ### To be continued...........
 ####precap:-
-1) How to remove the graph background.
+1) How to insert image in the graph.
 
-2) How to insert image in the graph.
-
-3) How to hide and show the graph lines on external click events.
+2) How to hide and show the graph lines on external click events.
 
