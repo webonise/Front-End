@@ -315,7 +315,9 @@ Just add a property(option) 'gridLineWidth:0' in the yAxis: object.
 
 #### How to add Image to your graph.
 It is possible that sometimes we will get the requirement to add the image to our graph to show some changes or make our graph more interactive. Lets see how we can achieve that requirement. We have to do certain things:
+
 1) First call the event option inside the chart object
+
 2) In that event option we have to render that image (call that image with absolute path) inside a function, lets see the syntax:
 
 Assume in the above graph we are showing a image of Green Line.
