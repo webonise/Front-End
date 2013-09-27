@@ -441,4 +441,7 @@ Lets see the code:
 Here you can see that by using lineChart object here accessed the series array. So when click on button respective line will hide and show.
 
 Hiding Yellow Line:
+
 ![ScreenShot](image/hide_yellow_line.jpg)
+
+Similarly, we can do it for the blue line.
