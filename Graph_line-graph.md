@@ -377,6 +377,8 @@ Lets add two buttons 'Hide Yellow' and 'Hide Blue' on the top of the graph and g
 Now on click on the buttons we are going to hide and show (toggle) the graph lines:
 
 Lets see the code:
+
+```html
 <script>
         $(document).ready(function(){
             $(function () {
