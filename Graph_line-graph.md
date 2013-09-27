@@ -364,7 +364,49 @@ Assume in the above graph we are showing a image of Green Line.
 
 you can see the green line with top arrow is coming inside the graph
 
-### To be continued...........
-####precap:-
-1) How to hide and show the graph lines on external click events.
+#### Now let's see how we can access the graphs line from outside elements of that graph, means hide and show the graph lines using external button or links click:
 
+Now here we can access the line by using lineChart object which we have declared to initialize the chart object.
+In the line graph the lines in the series object is placed as array indexes, say the first line will be on the index 0, second line is on index 1 and so on.
+So, we can access it like series[0], series[1] and so on......
+
+Lets add two buttons 'Hide Yellow' and 'Hide Blue' on the top of the graph and give them an id to access it on javascript. As shown below.
+![ScreenShot](image/hide_show_btn_image.jpg)
+
+Lets see the code:
+<script>
+        $(document).ready(function(){
+            $(function () {
+                var lineChart = new Highcharts.Chart({
+		   chart:{
+                        renderTo:'basicLineChart',
+                        type:'line',
+			events: {
+                 	    load: function () {
+                        	  this.renderer.image('image/lineGraphPath.png',250, 12, 11, 259)// (left, top, width, height) these are the values passed.
+      		                  .add();
+                     		}
+                	}
+                    },
+                   credits: {
+                            enabled : false
+                   },
+
+                   yAxis: {
+                         lineWidth: 1,
+			 gridLineWidth: 0
+                   },
+                   series: [{
+                          name: 'Jane',
+                          data: [1, 0, 4],
+                         color: '#cde123'
+                  }, {
+                          name: 'John',
+                          data: [5, 7, 3],
+                          color: '#23c4e1'
+                  }]
+                });
+            });
+        });
+    </script>
+```
