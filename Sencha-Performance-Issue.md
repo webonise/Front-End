@@ -36,7 +36,7 @@ The Over-nesting of components should be avoided. This results in slow loading o
         oldCard.destroy();
   });
 ```
-As soon as we are done with views, destroy them when they are deactivated.
+	As soon as we are done with views, destroy them when they are deactivated.
    
 7. Add and remove listeners properly.
 
