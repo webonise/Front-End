@@ -1,4 +1,4 @@
-                       #Sencha performance issue
+#Sencha performance issue
 
 ##Performance issue in Sencha is mainly occurred due to following,
 
@@ -15,15 +15,15 @@ Apart from this we have huge data to display on screen which includes complex co
 
 1. All the Views/Panels should not be loaded at once into the Viewport. The Views/Panels should be created whenever required. This results in better memory usage which leads to faster responsiveness of the app.
 
-####2. Keep your Dom structure Light
+2. Keep your Dom structure Light
 	Limited amout of advanced css3(border-radius, box-shadow, gradient)        
     Avoid using dom element depth.
 
 
-####3. Prevent unnecessary layouts.
-The Over-nesting of components should be avoided. This results in slow loading of the view. The nesting of �vbox� inside another �vbox� should be avoided till it is absolutely necessary, as it results in further delay in View loading. In a normal scenario, one should use �hbox� instead of �vbox� as it provides better performance in loading of the View.
+3. Prevent unnecessary layouts.
+The Over-nesting of components should be avoided. This results in slow loading of the view. The nesting of vbox inside another vbox should be avoided till it is absolutely necessary, as it results in further delay in View loading. In a normal scenario, one should use hbox instead of vbox as it provides better performance in loading of the View.
 
-4. The use of �defaults� in the config of a panel/fieldset also helps enhance the performance of an app. The �defaults� help define some attributes for the parent panel which all the subclass panels will inherit. This helps in reducing the overall size of the code thereby enhancing the memory utilization.
+4. The use of defaults in the config of a panel/fieldset also helps enhance the performance of an app. The defaults help define some attributes for the parent panel which all the subclass panels will inherit. This helps in reducing the overall size of the code thereby enhancing the memory utilization.
 
 
 5. The list should have smooth and fast scrolling. To achieve this, it is advisable to avoid using box shadows and gradients. Having just a background color enhances the responsiveness of the lists. High resolution images should also be avoided as they consume a lot of cache memory space, which further reduces performance.
