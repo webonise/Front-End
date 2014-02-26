@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53bc59c4-a245-41d0-b8ae-fb314c42daf4" name="Default" comment="" />
+    <list default="true" id="53bc59c4-a245-41d0-b8ae-fb314c42daf4" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\projtects\Front-End\Guidelines\wordpress.md" afterPath="" />
+    </list>
     <ignored path="Front-End.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,19 +33,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wordpress.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Guidelines/wordpress.md">
+      <file leaf-file-name="CSS-Guidelines.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Guidelines/CSS-Guidelines.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="120" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.92466766">
+            <state line="35" column="7" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSS-Guidelines.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Guidelines/CSS-Guidelines.md">
+      <file leaf-file-name="wordpress.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Setups/wordpress.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="14" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0">
+            <state line="11" column="16" selection-start="298" selection-end="298" vertical-scroll-proportion="0.27621862">
               <folding />
             </state>
           </provider>
@@ -110,6 +112,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Front-End" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Front-End" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Front-End" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Setups" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -229,6 +245,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../zendesk/categorypage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Guidelines/noscript.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="4" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0">
@@ -238,21 +261,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Guidelines/CSS-Guidelines.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="14" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0">
+        <state line="35" column="7" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../zendesk/categorypage.html">
+    <entry file="file://$PROJECT_DIR$/Setups/wordpress.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Guidelines/wordpress.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="120" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.92466766">
+        <state line="11" column="16" selection-start="298" selection-end="298" vertical-scroll-proportion="0.27621862">
           <folding />
         </state>
       </provider>
