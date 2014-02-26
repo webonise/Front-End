@@ -9,6 +9,8 @@
 
 http://webonise.github.io/jQuery-plugins/
 
+# Hi, User! [fancy:hi-user]
+
 ### 1. jQurey-responsive-full-screen image and slider page
 http://webonise.github.io/jQuery-plugins/responsive-full-screen.html
 
