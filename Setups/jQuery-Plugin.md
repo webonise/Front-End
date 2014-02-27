@@ -6,7 +6,6 @@
 
 
 ### jQurey-plugin home page
-
 http://webonise.github.io/jQuery-plugins/
 
 ### 1. jQurey-responsive-full-screen image and slider page
