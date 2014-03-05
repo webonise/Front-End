@@ -29,9 +29,9 @@ Create the package.json file in your project root directory with following code
 ```json
 {
     "name": "Project-name",
-	"devDependencies":
-	{
-	}
+    "devDependencies":
+    {
+    }
 }
 ```
 
@@ -114,9 +114,9 @@ node --version or node
 ```
 if node.js not installed in your system, then install node.js using following link
 
-    [windows 64 bit](http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi)
+ [windows 64 bit](http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi)
 
-    [windows 32 bit](http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi)
+ [windows 32 bit](http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi)
 
 2. after that run grunt command 
 
