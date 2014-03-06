@@ -11,7 +11,9 @@ Grunt and Grunt plugins are installed and managed via npm, the Node.js package m
 
 ###2. Installing the CLI
 run this command on command prompt
-####npm install -g grunt-cli
+````cmd
+    npm install -g grunt-cli
+````
 
 grunt-cli will put the grunt command in your system path, allowing it to be run from any directory.
 
@@ -42,6 +44,7 @@ npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-concat --save-dev
 npm install grunt-contrib-compass --save-dev
 npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-cssmin --save-dev
 ```
 Here **--save-dev** option  automatically update your  ***package.json***
 
@@ -53,19 +56,27 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        concat: {
-            dist: { 
-                src: ['js/*.js'],
-                dest: 'js-concat/alljs.js'
+        concat: {   
+            dist: {
+                src: [
+                    'js/libs/jquery-1.7.2.min.js',
+                    'js/libs/jquery.cycle2.min.js',
+                    'js/libs/jquery.easing.min.js',
+                    'js/script.js',
+                ],
+                dest: 'js/build/production.js',
+                nonull: true,
             }
         },
         
-        
         uglify: {
-            dist: {
-                files: {
-                'min-js/alljs.min.js': ['js-concat/alljs.js']
-                }
+            options: {
+              banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */'
+            },
+            build: {
+                src: 'js/build/production.js',
+                dest: 'js/build/production.min.js'
             }
         },
 
@@ -77,29 +88,50 @@ module.exports = function(grunt) {
                 }
             },
         },
+        
+        cssmin: {
+          add_banner: {
+            options: {
+              banner: '/* My minified css file */'
+            },
+            files: {
+              'css/production.min.css': [
+                'css/bootstrap.css',
+                'css/bootstrap-responsive.css',
+                'css/mCustomScrollbar.css',
+                'css/ColorBox/colorbox.css',
+                'css/global.css',
+              ]
+            }
+          }
+        },
 
+        
         watch: {
-            script:{
-                files: ['js/*.js'],
-                tasks: ['concat'],
+            gruntfile: {
+              files: 'Gruntfile.js',
+              tasks: ['notify:gruntChange'],
             },
-            
-            min:{
-                files: ['js-concat/*.js'],
-                tasks: ['uglify'],
+            scripts: {
+                files: ['js/*.js', 'js/libs/*.js'],
+                tasks: ['concat', 'uglify'],
             },
-
-        style:{
-            files:['sass/*.scss'],
-            tasks:['compass'],
+            csstosass: {
+                files: ['sass/*.sass'],
+                tasks: ['compass'],
+            },
+            css: {
+                files: ['css/*.css'],
+                tasks: ['cssmin'],
+            }
         }
-    }
-});
+    });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('default', ['concat','uglify','compass','watch']);
 };
