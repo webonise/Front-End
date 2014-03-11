@@ -11,7 +11,9 @@ Grunt and Grunt plugins are installed and managed via npm, the Node.js package m
 
 ###2. Installing the CLI
 run this command on command prompt
-####npm install -g grunt-cli
+````cmd
+    npm install -g grunt-cli
+````
 
 grunt-cli will put the grunt command in your system path, allowing it to be run from any directory.
 
@@ -42,13 +44,15 @@ npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-concat --save-dev
 npm install grunt-contrib-compass --save-dev
 npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-cssmin --save-dev
 ```
 Here **--save-dev** option  automatically update your  ***package.json***
 
 ##2. The Gruntfile
 Create Gruntfile.js in your project root directory by following code
 **Gruntfile.js**
-```jsmodule.exports = function(grunt) {
+```js
+module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
