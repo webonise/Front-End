@@ -39,11 +39,11 @@ Create the package.json file in your project root directory with following code
 
 ###Installing Grunt and gruntplugins in project root directory
 ```cmd
-npm install grunt --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-contrib-concat --save-dev
-npm install grunt-contrib-compass --save-dev
-npm install grunt-contrib-watch --save-dev
+npm install grunt --save-dev && 
+npm install grunt-contrib-uglify --save-dev &&
+npm install grunt-contrib-concat --save-dev &&
+npm install grunt-contrib-compass --save-dev &&
+npm install grunt-contrib-watch --save-dev &&
 npm install grunt-contrib-cssmin --save-dev
 ```
 Here **--save-dev** option  automatically update your  ***package.json***
@@ -62,8 +62,7 @@ module.exports = function(grunt) {
                     'js/libs/jquery-1.7.2.min.js',
                     'js/libs/jquery.cycle2.min.js',
                     'js/libs/jquery.easing.min.js',
-                    'js/script.js',
-                    'js/*.js'
+                    'js/script.js'
                 ],
                 dest: 'js/build/production.js',
                 nonull: true,
@@ -103,9 +102,7 @@ module.exports = function(grunt) {
                 'css/bootstrap.css',
                 'css/bootstrap-responsive.css',
                 'css/mCustomScrollbar.css',
-                'css/ColorBox/colorbox.css',
-                'css/*.css',
-                '!css/production.min.css'
+                'css/ColorBox/colorbox.css'
               ]
             }
           }
@@ -121,7 +118,7 @@ module.exports = function(grunt) {
                 tasks: ['concat', 'uglify'],
             },
             csstosass: {
-                files: ['sass/*.scss'],
+                files: ['sass/*.sass'],
                 tasks: ['compass'],
             },
             css: {
