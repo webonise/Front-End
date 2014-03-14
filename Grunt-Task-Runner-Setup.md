@@ -39,11 +39,11 @@ Create the package.json file in your project root directory with following code
 
 ###Installing Grunt and gruntplugins in project root directory
 ```cmd
-npm install grunt --save-dev && 
-npm install grunt-contrib-uglify --save-dev &&
-npm install grunt-contrib-concat --save-dev &&
-npm install grunt-contrib-compass --save-dev &&
-npm install grunt-contrib-watch --save-dev &&
+npm install grunt --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-concat --save-dev
+npm install grunt-contrib-compass --save-dev
+npm install grunt-contrib-watch --save-dev
 npm install grunt-contrib-cssmin --save-dev
 ```
 Here **--save-dev** option  automatically update your  ***package.json***
