@@ -1,5 +1,4 @@
-#Front-End Guidelines
-
+#Front-End Documents
 
 
 * [HTML Guidelines](http://github.com/webonise/Front-End/blob/master/HTML-Guidelines.md)
