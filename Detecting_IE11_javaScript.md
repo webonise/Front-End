@@ -43,6 +43,7 @@ The MSStream object also allows Interop with XHR and HTML tags for the IInputStr
 An MSStream is consumed or created in the following areas:
 
 i).  XmlHttpRequest (XHR)
+
 ii). MSApp.createStreamFromInputStream
 
 You create a Uniform Resource Identifier (URI) for the MSStream object using the window.URL.createObjectURL method.
