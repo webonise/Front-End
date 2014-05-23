@@ -20,6 +20,8 @@ from DOM and that property is now undefined. But the property itself is present 
 but in IE11 it also returns false for second check. And, finally, hasOwnProperty is called via Object because in IE8
 window is not an instanceof Object and does not have hasOwnProperty method.
 
+### NOTE: This activeXObject method will only work on the IE which has ActiveX installed. So this is on of its drawback.
+
 ## 2) Method Second: By using MSStream object:
 
 ```html
@@ -31,7 +33,7 @@ window is not an instanceof Object and does not have hasOwnProperty method.
 
 ### Explanation:
 
-This MSStream object will detect both IE-10 and IE-11.
+This MSStream object will detect both IE-10 and IE-11 and return true.
 The MSStream object is a Document Object Model (DOM) type that represents a stream of unsized, sequential binary data.
 Use the MSStream object for data that is streaming over the network which hasn't completed downloaded yet, or as an analogous type to IInputSteam winrt objects.
 MSStream is backed by IInputStream.
