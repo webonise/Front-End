@@ -20,7 +20,7 @@ from DOM and that property is now undefined. But the property itself is present 
 but in IE11 it also returns false for second check. And, finally, hasOwnProperty is called via Object because in IE8
 window is not an instanceof Object and does not have hasOwnProperty method.
 
-### NOTE: This activeXObject method will only work on the IE which has ActiveX installed. So this is on of its drawback.
+### NOTE: This activeXObject method will only work on the IE which has ActiveX installed. So this is one of its drawback.
 
 ## 2) Method Second: By using MSStream object:
 
