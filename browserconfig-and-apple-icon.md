@@ -9,6 +9,7 @@
 ### How to create broswerconfig.xml file for IE11
 #### browserconfig.xml  :
 * This file was introduced in IE11 , it lets you define advanced web application tiles.
+* It is used to define pinned site customization , e.g tile background and notifications.
 * This file is very useful when it comes to favicon : it define the various tile picture and background color.
 * By default IE11(windows 8) looks for browserconfig.xml at root of the web site , if the file is not present in root it will give 404 error .
 
@@ -67,16 +68,16 @@ If you want user to able to add your web application or website link to their ho
 
 Following are some steps to show an icon to represent your web application or website on iOS
 
-1.	If you want to specify an icon for your whole website , insert an icon file in PNG format in root folder called apple.touch.icon.png.
+1.If you want to specify an icon for your whole website , insert an icon file in PNG format in root folder called apple.touch.icon.png.
 
-2.	If you want to specify icon just one page add link element to that webpage as follows
+2.If you want to specify icon just one page add link element to that webpage as follows
 
 ```css
 <link rel=”apple-touch-icon” href=”/custom_icon.png”>
 ```
 (you can use any name with icon.png)
 
-3.	To specify multiple icons for different device resolution e.g for iPhone and iPad devices you need to add a sizes attribute to each link element as following way.
+3.To specify multiple icons for different device resolution e.g for iPhone and iPad devices you need to add a sizes attribute to each link element as following way.
 
 e.g
 ```css
@@ -88,7 +89,7 @@ e.g
     here , icons that is most appropriate size for device  is used , if we do not specifiy any sizes attribute then default is 60 x 60 .
     If no icons are specified then website root directory is serach for icons start with appli-touch-icon… prefix. E.g  if device icons size is 60x60 then system searched for file name as apple-touch-icon-76x76.png or apple-touch-icon.png
 
-4.	Apple Device icons size
+4.Apple Device icons size
 
     Each apple device has different screen size and resolution , threrfore we need a separate  , different sized icon for each device so we need to update on size ,  following are some icons size
 
@@ -99,7 +100,7 @@ e.g
 
     iOS automatically determine which icons to use depending on its size
 
-5.	Specifying a startup image.
+5.Specifying a startup image.
 
     On iOS , similar to native application ,we can also specify a startup image or splash image display while web application or website launches.
 
