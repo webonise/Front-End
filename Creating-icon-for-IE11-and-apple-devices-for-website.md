@@ -1,4 +1,4 @@
-#Browser configuration file and Apple touch icon
+#Creating website favicon for IE11 and Apple devices
 
 ## Table of Contents
 
@@ -9,6 +9,7 @@
 ### How to create broswerconfig.xml file for IE11
 #### browserconfig.xml  :
 * This file was introduced in IE11 , it lets you define advanced web application tiles.
+* This is apparently related to a new type of favicon used by Internet Explorer 11.
 * It is used to define pinned site customization , e.g tile background and notifications.
 * This file is very useful when it comes to favicon : it define the various tile picture and background color.
 * By default IE11(windows 8) looks for browserconfig.xml at root of the web site , if the file is not present in root it will give 404 error .
