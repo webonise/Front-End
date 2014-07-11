@@ -6,7 +6,7 @@
 2. [How to create web clip icon for Apple devices]
 
 
-### How to create broswerconfig.xml file for IE11
+### How to create broswerconfig.xml file for IE11(https://github.com/webonise/Front-End/blob/unmesh/Creating-icon-for-IE11-and-apple-devices-for-website.md#how-to-create-broswerconfigxml-file-for-ie11)
 #### browserconfig.xml  :
 * This file was introduced in IE11 , it lets you define advanced web application tiles.
 * This is apparently related to a new type of favicon used by Internet Explorer 11.
@@ -63,7 +63,7 @@ Here misapplication-config defines the name and location of an xml file containi
   <meta name="msapplication-square310x310logo" content="images/large.png" />
 ```
 
-### How to configure web application icon on iOS or iPhone
+### How to configure web application icon on iOS or iPhone(https://github.com/webonise/Front-End/blob/unmesh/Creating-icon-for-IE11-and-apple-devices-for-website.md#how-to-configure-web-application-icon-on-ios-or-iphone)
 
 If you want user to able to add your web application or website link to their home screen, these link reprented by icons that called web clips.
 
@@ -87,29 +87,29 @@ e.g
 <link rel=”apple-touch-icon” sizes=”120x120”  href=”touch-icon-iphone-retina.png”>
 <link rel=”apple-touch-icon” sizes=”152x152” href=”touch-icon-ipad-retina.png”>
 ```
-    here , icons that is most appropriate size for device  is used , if we do not specifiy any sizes attribute then default is 60 x 60 .
-    If no icons are specified then website root directory is serach for icons start with appli-touch-icon… prefix. E.g  if device icons size is 60x60 then system searched for file name as apple-touch-icon-76x76.png or apple-touch-icon.png
+here , icons that is most appropriate size for device  is used , if we do not specifiy any sizes attribute then default is 60 x 60 .
+If no icons are specified then website root directory is serach for icons start with appli-touch-icon… prefix. E.g  if device icons size is 60x60 then system searched for file name as apple-touch-icon-76x76.png or apple-touch-icon.png
 
 4.Apple Device icons size
 
-    Each apple device has different screen size and resolution , threrfore we need a separate  , different sized icon for each device so we need to update on size ,  following are some icons size
+Each apple device has different screen size and resolution , threrfore we need a separate  , different sized icon for each device so we need to update on size ,  following are some icons size
 
-    *	iPhone and iPad Touch (Retina Display) – 114px by 114px
-    *	iPhone and iPod Touch (Non Retina)- 57px by 57px.
-    *	iPad (Retina Display) – 144px by 144px
-    *	iPad (Non Retina)-  72px by 72px
+*	iPhone and iPad Touch (Retina Display) – 114px by 114px
+*	iPhone and iPod Touch (Non Retina)- 57px by 57px.
+*	iPad (Retina Display) – 144px by 144px
+*	iPad (Non Retina)-  72px by 72px
 
-    iOS automatically determine which icons to use depending on its size
+iOS automatically determine which icons to use depending on its size
 
 5.Specifying a startup image.
 
-    On iOS , similar to native application ,we can also specify a startup image or splash image display while web application or website launches.
+On iOS , similar to native application ,we can also specify a startup image or splash image display while web application or website launches.
 
 ```css
 <link rel=”apple-touch-startup-image” href=”/startup.png”>
 ```
 
-    On iPhonen and iPad touch , the image must be 320 x 480 pixel and in portrait orientation.
+On iPhonen and iPad touch , the image must be 320 x 480 pixel and in portrait orientation.
 
 
 
