@@ -6,7 +6,7 @@
 2. [How to create web clip icon for Apple devices]
 
 
-### How to create broswerconfig.xml file for IE11(https://github.com/webonise/Front-End/blob/unmesh/Creating-icon-for-IE11-and-apple-devices-for-website.md#how-to-create-broswerconfigxml-file-for-ie11)
+### How to create broswerconfig.xml file for IE11
 #### browserconfig.xml  :
 * This file was introduced in IE11 , it lets you define advanced web application tiles.
 * This is apparently related to a new type of favicon used by Internet Explorer 11.
@@ -63,7 +63,7 @@ Here misapplication-config defines the name and location of an xml file containi
   <meta name="msapplication-square310x310logo" content="images/large.png" />
 ```
 
-### How to configure web application icon on iOS or iPhone(https://github.com/webonise/Front-End/blob/unmesh/Creating-icon-for-IE11-and-apple-devices-for-website.md#how-to-configure-web-application-icon-on-ios-or-iphone)
+### How to configure web application icon on iOS or iPhone
 
 If you want user to able to add your web application or website link to their home screen, these link reprented by icons that called web clips.
 
