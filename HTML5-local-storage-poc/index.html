@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="store">
+<html>
     <head>
         <title>HTML5 Local Storage</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
     </head>
     <body>
         <div class="container contentWrap">
-            <div class="row">
-                <div class="span12">
-                    <h2>Custom Autocomplete using XML data file</h2>
-                    <form name="search_form" id="searchForm" class="form-search customForm" method="GET" action="#">
-                        <div class="input-append customFieldWrap">
-                            <input type="text" name="searchBox" id="searchBox" class="search-query input-xxlarge">
-                            <button type="submit" class="btn">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <div class="row">
                 <h2 class="span12">HTML-5 Local Storage</h2>
                 <div class="span6">
@@ -47,8 +34,6 @@
                                     <label for="designation">Designation<span>*</span></label>
                                     <input type="text" name="designation" id="designation" class="inputFields" placeholder="Designation"/>
                                 </div>
-                                <!--<a href="javascript: void(0);" id="addFields" class="btn btn-success">+</a>-->
-                                <!--<a href="javascript: void(0);" id="deleteFields" class="btn btn-danger">x</a>-->
                                 <input type="submit" value="Submit" class="btn btn-success"/>
                                 <input type="button" value="Clear Data" id="clearData" class="btn btn-danger"/>
                             </li>

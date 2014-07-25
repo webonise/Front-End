@@ -64,12 +64,6 @@ h1, h2, h3, h4, h5 {
 .buttonList .control-group input {
     width: 192px;
 }
-.buttonList a {
-    float: left;
-    margin: 9px 10px 0 0;
-    font-family: Helvetica, Arial, "sans-serif";
-    font-weight: bold;
-}
 .buttonList label span {
     color: red;
     font-size: 14px;
@@ -98,10 +92,4 @@ h1, h2, h3, h4, h5 {
 }
 .tableCustom tbody > tr:nth-child(2n+1) > td {
     background-color: #a0c6ef;
-}
-.customForm {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 2px solid white;
 }
