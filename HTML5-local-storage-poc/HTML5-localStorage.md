@@ -45,3 +45,36 @@ So we can check it in two ways:
         });
     </script>
 ```
+
+#### Type of Web Storage.
+Web storage offers two different storage areas:— local storage and session storage — which differ in scope and lifetime.
+
+##### Local Storage
+Data placed in local storage is per origin (the combination of protocol, hostname, and port number as defined in the same origin policy)
+(the data is available to all scripts loaded from pages from the same origin that previously stored the data)
+and persists even after the browser is closed.
+```html
+    <script>
+        $(document).ready(function(){
+            // Store value on the browser beyond the duration of the session
+            localStorage.setItem('key', 'value');
+
+            // Retrieve value (persists even after closing and re-opening the browser)
+            alert(localStorage.getItem('key'));
+        });
+    </script>
+```
+##### Session Storage
+Session storage is per-page-per-window and is limited to the lifetime of the window. Session storage is intended to allow separate instances of
+the same web application to run in different windows without interfering with each other, a use case that's not well supported by cookies.
+```html
+    <script>
+        $(document).ready(function(){
+            // Store value on browser for duration of the session
+            sessionStorage.setItem('key', 'value');
+
+            // Retrieve value (gets deleted when browser is closed and re-opened)
+            alert(sessionStorage.getItem('key'));
+        });
+    </script>
+```
