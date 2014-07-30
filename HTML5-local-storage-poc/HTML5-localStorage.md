@@ -78,3 +78,17 @@ the same web application to run in different windows without interfering with ea
         });
     </script>
 ```
+
+#### NOTE:
+Only strings can be stored via the Storage API. Attempting to store a different data type will result in an automatic conversion into a
+string in most browsers. Conversion into JSON (JavaScript Object Notation), however, allows for effective storage of JavaScript objects.
+
+```html
+    <script>
+        $(document).ready(function(){
+            // Store an object using JSON
+            localStorage.setItem('key', JSON.stringify({name: 'value'}));
+            alert(JSON.parse(localStorage.getItem('key')).name); // value
+        });
+    </script>
+```
