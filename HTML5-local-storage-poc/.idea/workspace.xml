@@ -50,7 +50,7 @@
       <file leaf-file-name="HTML5-localStorage.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTML5-localStorage.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="11" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.8493353">
+            <state line="66" column="21" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.22156574">
               <folding />
             </state>
           </provider>
@@ -132,20 +132,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HTML5-local-storage-poc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTML5-local-storage-poc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTML5-local-storage-poc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,7 +361,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML5-localStorage.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="11" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.8493353">
+        <state line="66" column="21" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.22156574">
           <folding />
         </state>
       </provider>
