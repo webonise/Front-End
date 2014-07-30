@@ -17,6 +17,7 @@ From your JavaScript code, you can access HTML5 Storage through the localStorage
 Before you can use it, you should detect whether the browser supports it.
 
 So we can check it in two ways:
+
 1) Using 'typeof' function:
 ```html
     <script>
