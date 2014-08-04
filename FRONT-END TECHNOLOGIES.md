@@ -36,4 +36,9 @@ FRONT-END TECHNOLOGIES WE ARE USING
 
 18- placeholder-labels js for Support PlaceHolder IE-9 and Earlier Versions
 
-19- 
+19- QTip Js For Tooltip
+
+20- CustomInput js Custom Radio and Check Box
+
+21- joyride JS For tour Guide or Tool tip
+
