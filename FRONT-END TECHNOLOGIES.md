@@ -78,5 +78,3 @@ A front-end web development framework is simply a collection of production ready
 
 [20]:http://getbootstrap.com/2.3.2/
 
-
-
