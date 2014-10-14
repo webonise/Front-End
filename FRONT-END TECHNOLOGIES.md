@@ -6,7 +6,7 @@ FRONT-END TECHNOLOGIES
 Version
 ----
 
-1.0
+2.0
 
 
 A front-end web development framework is simply a collection of production ready HTML/CSS/JavaScript components that we can use in our designs. There are many frameworks out there but some of them stand out from the crowd. For your facilitation below you will find outlined some of the most powerful and popular frameworks available today. 
@@ -54,6 +54,25 @@ A front-end web development framework is simply a collection of production ready
 
 21. [Joyride JS][18] For tour Guide or Tool tip
 
+22. [ZeroClipboard][19] ZeroClipboard library provides an easy way to copy text to the clipboard using an invisible Adobe Flash movie and a JavaScript interface.
+
+23. [jQuery Easing Plugin][21] A jQuery plugin from GSGD to give advanced easing options.
+
+24. [Node.js®][22] It is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+
+25. [Dojo-related tools][23] Design, Develop and Deploy high quality optimized web apps using these Dojo-related tools
+
+26. [ArcGIS][24] The Mapping Platform for Your Organization Quickly create interactive maps and apps and share them with the rest 
+
+27. [Angular JS][25] HTML enhanced for web apps!
+
+28. [Bluebird][26] is a fully featured promise library with focus on innovative features and performance.
+
+29. [Foundation][27] Getting started with Foundation is easy. Whether you are a master of Sass, building a new app, or making your existing site responsive, we've got you covered.
+
+30. [JavaScript Libraries][28] The definitive source of the best  JavaScript libraries, frameworks, and plugins.
+
+
 
 
 
@@ -75,6 +94,15 @@ A front-end web development framework is simply a collection of production ready
 [16]:http://craigsworks.com/projects/qtip/
 [17]:https://github.com/filamentgroup/jQuery-Custom-Input
 [18]:http://zurb.com/playground/jquery-joyride-feature-tour-plugin
-
+[19]:http://zeroclipboard.org/#demo
 [20]:http://getbootstrap.com/2.3.2/
+[21]:http://gsgd.co.uk/sandbox/jquery/easing/
+[22]:http://nodejs.org/
+[23]:http://dojotoolkit.org/
+[24]:https://www.arcgis.com/features/
+[25]:https://angularjs.org/
+[26]:https://www.npmjs.org/package/bluebird
+[27]:http://foundation.zurb.com/docs/index.html
+[28]:http://www.javascripting.com/animation/?sort=rating
+
 
