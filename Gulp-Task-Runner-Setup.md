@@ -63,8 +63,9 @@ In the example above, the `gulp.src()` function takes a string that matches a fi
 In diagram form, this is what happens:
 
 
-<figure>![Stream diagram.](images/01-streams-opt.png)
-<figure>When there is only one task, the function doesn’t really do much. However, consider the following 
+![Stream diagram.](images/01-streams-opt.png)
+
+When there is only one task, the function doesn’t really do much. However, consider the following 
 ```js
 gulp.task('js', function () {
    return gulp.src('js/*.js')
@@ -79,8 +80,9 @@ To run this yourself, install `gulp`, `gulp-jshint`, `gulp-uglify` and `gulp-con
 
 This task will take all files matching `js/*.js` (i.e. all JavaScript files from the `js` directory), run JSHint on them and print the output, uglify each file, and then concatenate them, saving them to `build/app.js`. In diagram form:
 
-<figure>![Stream diagram.](images/02-steams-2-opt.png)
-<figure>If you’re familiar with Grunt, then you’ll notice that this is pretty different to how Grunt does it. Grunt doesn’t use streams; instead, it takes files, runs a single task on them and saves them to new files, repeating the entire process for every task. This results in a lot of hits to the file system, making it slower than Gulp.
+![Stream diagram.](images/02-steams-2-opt.png)
+
+If you’re familiar with Grunt, then you’ll notice that this is pretty different to how Grunt does it. Grunt doesn’t use streams; instead, it takes files, runs a single task on them and saves them to new files, repeating the entire process for every task. This results in a lot of hits to the file system, making it slower than Gulp.
 
 For a more comprehensive read on streams, check out the “[Stream Handbook](https://github.com/substack/stream-handbook)<sup class="po" id="note-11">[11](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#11)</sup>.”
 
@@ -323,10 +325,13 @@ An alternative to LiveReload is available. [BrowserSync](http://browsersync.io/)
 
 When you make changes to code, BrowserSync either reloads the page or, if it is CSS, injects the CSS, meaning that the page doesn’t need to be refreshed. This is very useful if your website isn’t refresh-resistant. Suppose you’re developing four clicks into a single-page application, and refreshing the page would take you back to the starting page. With LiveReload, you would need to click four times every time you make a change. BrowserSync, however, would just inject the changes when you modify the CSS, so you wouldn’t need to click back.
 
-<figure>[![BrowserSync is a better way to test your design across browsers.](images/03-browsersync-opt-500.gif)](http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/06/03-browsersync-opt.gif)<sup class="po" id="note-24">[24](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#24)</sup>
-<figcaption>BrowserSync is a better way to test your design across browsers. ([View large version](http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/06/03-browsersync-opt.gif)<sup class="po" id="note-25">[25](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#25)</sup>)</figcaption>
-<figure>BrowserSync also synchronizes clicks, form actions and your scroll position between browsers. You could open a couple of browsers on your desktop and another on an iPhone and then navigate the website. The links would be followed on all of them, and as you scroll down the page, the pages on all of the devices would scroll down (usually smoothly, too!). When you input text in a form, it would be entered in every window. And when you don’t want this behavior, you can turn it off.<figure>[![BrowserSync doesn’t require a browser plugin because it serves your files for you.](images/04-browsersync-opt-500.gif)](http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/06/04-browsersync-opt.gif)<sup class="po" id="note-26">[26](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#26)</sup>
-<figcaption>BrowserSync doesn’t require a browser plugin because it serves your files for you. ([View large version](http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/06/04-browsersync-opt.gif)<sup class="po" id="note-27">[27](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#27)</sup>)</figcaption>
+![BrowserSync is a better way to test your design across browsers.](images/03-browsersync-opt-500.gif)
+
+BrowserSync also synchronizes clicks, form actions and your scroll position between browsers. You could open a couple of browsers on your desktop and another on an iPhone and then navigate the website. The links would be followed on all of them, and as you scroll down the page, the pages on all of the devices would scroll down (usually smoothly, too!). When you input text in a form, it would be entered in every window. And when you don’t want this behavior, you can turn it off.
+
+![BrowserSync doesn’t require a browser plugin because it serves your files for you.](images/04-browsersync-opt-500.gif)
+
+BrowserSync doesn’t require a browser plugin because it serves your files for you. ([View large version](http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/06/04-browsersync-opt.gif)<sup class="po" id="note-27">[27](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#27)</sup>)</figcaption>
 <figure>BrowserSync doesn’t require a browser plugin because it serves your files for you (or proxies them, if they’re dynamic) and serves a script that opens a socket between the browser and the server. This hasn’t caused any problems for me in the past, though.
 
 There isn’t actually a plugin for Gulp because BrowserSync doesn’t manipulate files, so it wouldn’t really work as one. However, the [BrowserSync module on npm](https://www.npmjs.org/package/browser-sync)<sup class="po" id="note-28">[28](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#28)</sup> can be called directly from Gulp. First, install it through npm:
