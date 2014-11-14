@@ -3,7 +3,7 @@
 
 Installing Gulp is pretty easy. First, install the Gulp package globally:
 ```js
-npm install <span class="token operator">-</span>g gulp
+npm install -g gulp
 ```
 Then, install it in your project:
 
@@ -62,16 +62,19 @@ In the example above, the `gulp.src()` function takes a string that matches a fi
 
 In diagram form, this is what happens:
 
-<figure>![Stream diagram.](./building-with-gulp_files/01-streams-opt.png)
-<figure>When there is only one task, the function doesn’t really do much. However, consider the following code:    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">return</span> gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token string">'js/*.js'</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">jshint<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>jshint<span class="token punctuation">.</span><span class="token function">reporter<span class="token punctuation">(</span></span><span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">uglify<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">concat<span class="token punctuation">(</span></span><span class="token string">'app.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>gulp<span class="token punctuation">.</span><span class="token function">dest<span class="token punctuation">(</span></span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+<figure>![Stream diagram.](./building-with-gulp_files/01-streams-opt.png)
+<figure>When there is only one task, the function doesn’t really do much. However, consider the following 
+```js
+gulp.task('js', function () {
+   return gulp.src('js/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'))
+      .pipe(uglify())
+      .pipe(concat('app.js'))
+      .pipe(gulp.dest('build'));
+});
+```
 To run this yourself, install `gulp`, `gulp-jshint`, `gulp-uglify` and `gulp-concat`.
 
 This task will take all files matching `js/*.js` (i.e. all JavaScript files from the `js` directory), run JSHint on them and print the output, uglify each file, and then concatenate them, saving them to `build/app.js`. In diagram form:
@@ -99,6 +102,7 @@ Gulp uses [node-glob](https://github.com/isaacs/node-glob)<sup class="po" id="no
 *   `!js/app.js`
 
     Excludes `js/app.js` from the match, which is useful if you want to match all files in a directory except for a particular file
+    
 *   `*.+(js|css)`
 
     Matches all files in the root directory ending in `.js` or `.css`
@@ -106,28 +110,34 @@ Gulp uses [node-glob](https://github.com/isaacs/node-glob)<sup class="po" id="no
 Other features are available, but they’re not commonly used in Gulp. Check out out the [Minimatch](https://github.com/isaacs/minimatch)<sup class="po" id="note-13">[13](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#13)</sup> documentation for more.
 
 Let’s say that we have a directory named `js` containing JavaScript files, some minified and some not, and we want to create a task to minify the files that aren’t already minified. To do this, we match all JavaScript files in the directory and then exclude all files ending in `.min.js`:
-
-    gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token punctuation">[</span>'js<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>js<span class="token string">', '</span><span class="token operator">!</span>js<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>min<span class="token punctuation">.</span>js'<span class="token punctuation">]</span><span class="token punctuation">)</span>
-
+```js
+gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+```
 #### Defining Tasks
 
 To define a task, use the `gulp.task()` function. When you define a simple task, this function takes two attributes: the task’s name and a function to run.
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'greet'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.task('greet', function () {
+   console.log('Hello world!');
+});
+```
 
 Running `gulp greet` will result in “Hello world” being printed to the console.
 
 A task may also be a list of other tasks. Suppose we want to define a `build` task that runs three other tasks, `css`, `js` and `imgs`. We can do this by specifying an array of tasks, instead of the function:
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'build'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'css'</span><span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'imgs'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.task('build', ['css', 'js', 'imgs']);
+```
 
 These will be run asynchronously, so you can’t assume that the `css` task will have finished running by the time `js` starts — in fact, it probably won’t have. To make sure that a task has finished running before another task runs, you can specify dependencies by combining the array of tasks with the function. For example, to define a `css` task that checks that the `greet` task has finished running before it runs, you can do this:
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'css'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'greet'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true"> // Deal with CSS here
-    </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.task('css', ['greet'], function () {
+   // Deal with CSS here
+});
+```
 
 Now, when you run the `css` task, Gulp will execute the `greet` task, wait for it to finish, and then call the function that you’ve specified.
 
@@ -135,9 +145,11 @@ Now, when you run the `css` task, Gulp will execute the `greet` task, wait for i
 
 You can define a default task that runs when you just run `gulp`. You can do this by defining a task named `default`.
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'default'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true"> // Your default task
-    </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.task('default', function () {
+   // Your default task
+});
+```
 
 #### Plugins
 
@@ -152,14 +164,21 @@ Let’s expand on our `js` task from earlier:
         uglify <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-uglify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         concat <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-concat'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">return</span> gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token string">'js/*.js'</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">jshint<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>jshint<span class="token punctuation">.</span><span class="token function">reporter<span class="token punctuation">(</span></span><span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">uglify<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">concat<span class="token punctuation">(</span></span><span class="token string">'app.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>gulp<span class="token punctuation">.</span><span class="token function">dest<span class="token punctuation">(</span></span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
+
+gulp.task('js', function () {
+   return gulp.src('js/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'))
+      .pipe(uglify())
+      .pipe(concat('app.js'))
+      .pipe(gulp.dest('build'));
+});
+```
 
 We’re using three plugins here, [gulp-jshint](https://github.com/wearefractal/gulp-jshint)<sup class="po" id="note-15">[15](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#15)</sup>, [gulp-uglify](https://github.com/terinjokes/gulp-uglify)<sup class="po" id="note-16">[16](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#16)</sup> and [gulp-concat](https://github.com/wearefractal/gulp-concat)<sup class="po" id="note-17">[17](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#17)</sup>. You can see in the `README` files for the plugins that they’re pretty easy to use; options are available, but the defaults are usually good enough.
 
@@ -171,36 +190,42 @@ The other two plugins are clearer: the `uglify()` function minifies the code, an
 
 A module that I find really useful is gulp-load-plugins, which automatically loads any Gulp plugins from your `package.json` file and attaches them to an object. Its most basic usage is as follows:
 
-    <span class="token keyword">var</span> gulpLoadPlugins <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-load-plugins'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        plugins <span class="token operator">=</span> <span class="token function">gulpLoadPlugins<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulpLoadPlugins = require('gulp-load-plugins'),
+    plugins = gulpLoadPlugins();
+```
 
 You can put that all on one line (`var plugins = require('gulp-load-plugins')();`), but I’m not a huge fan of inline `require` calls.
 
 After running that code, the `plugins` object will contain your plugins, camel-casing their names (for example, `gulp-ruby-sass` would be loaded to `plugins.rubySass`). You can then use them as if they were required normally. For example, our `js` task from before would be reduced to the following:
 
-    <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        gulpLoadPlugins <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-load-plugins'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        plugins <span class="token operator">=</span> <span class="token function">gulpLoadPlugins<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulp = require('gulp'),
+    gulpLoadPlugins = require('gulp-load-plugins'),
+    plugins = gulpLoadPlugins();
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">return</span> gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token string">'js/*.js'</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>plugins<span class="token punctuation">.</span><span class="token function">jshint<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>plugins<span class="token punctuation">.</span>jshint<span class="token punctuation">.</span><span class="token function">reporter<span class="token punctuation">(</span></span><span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>plugins<span class="token punctuation">.</span><span class="token function">uglify<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>plugins<span class="token punctuation">.</span><span class="token function">concat<span class="token punctuation">(</span></span><span class="token string">'app.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>gulp<span class="token punctuation">.</span><span class="token function">dest<span class="token punctuation">(</span></span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gulp.task('js', function () {
+   return gulp.src('js/*.js')
+      .pipe(plugins.jshint())
+      .pipe(plugins.jshint.reporter('default'))
+      .pipe(plugins.uglify())
+      .pipe(plugins.concat('app.js'))
+      .pipe(gulp.dest('build'));
+});
+```
 
 This assumes a `package.json` file that is something like the following:
 
-    <span class="token punctuation">{</span>
-       <span class="token string">"devDependencies"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          <span class="token string">"gulp-concat"</span><span class="token punctuation">:</span> <span class="token string">"~2.2.0"</span><span class="token punctuation">,</span>
-          <span class="token string">"gulp-uglify"</span><span class="token punctuation">:</span> <span class="token string">"~0.2.1"</span><span class="token punctuation">,</span>
-          <span class="token string">"gulp-jshint"</span><span class="token punctuation">:</span> <span class="token string">"~1.5.1"</span><span class="token punctuation">,</span>
-          <span class="token string">"gulp"</span><span class="token punctuation">:</span> <span class="token string">"~3.5.6"</span>
-       <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+```js
+{
+   "devDependencies": {
+      "gulp-concat": "~2.2.0",
+      "gulp-uglify": "~0.2.1",
+      "gulp-jshint": "~1.5.1",
+      "gulp": "~3.5.6"
+   }
+}
+```
 
 In this example, it’s not actually much shorter. However, with longer and more complicated Gulp files, it reduces a load of includes to just one or two lines.
 
@@ -214,26 +239,32 @@ To watch a file or files, use the `gulp.watch()` function, which takes a glob or
 
 Let’s say that we have a `build` task that turns our template files into HTML, and we want to define a `watch` task that watches our template files for changes and runs the task to turn them into HTML. We can use the `watch` function as follows:
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'watch'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       gulp<span class="token punctuation">.</span><span class="token function">watch<span class="token punctuation">(</span></span><span class="token string">'templates/*.tmpl.html'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'build'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.task('watch', function () {
+   gulp.watch('templates/*.tmpl.html', ['build']);
+});
+```
 
 Now, when we change a template file, the `build` task will run and the HTML will be generated.
 
 You can also give the `watch` function a callback, instead of an array of tasks. In this case, the callback would be given an `event` object containing some information about the event that triggered the callback:
 
-    gulp<span class="token punctuation">.</span><span class="token function">watch<span class="token punctuation">(</span></span><span class="token string">'templates/*.tmpl.html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Event type: '</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // added, changed, or deleted
-    </span>   console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Event path: '</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // The path of the modified file
-    </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+gulp.watch('templates/*.tmpl.html', function (event) {
+   console.log('Event type: ' + event.type); // added, changed, or deleted
+   console.log('Event path: ' + event.path); // The path of the modified file
+});
+```
 
 Another nifty feature of `gulp.watch()` is that it returns what is known as a `watcher`. Use the `watcher` to listen for additional events or to add files to the `watch`. For example, to both run a list of tasks and call a function, you could add a listener to the `change` event on the returned `watcher`:
 
-    <span class="token keyword">var</span> watcher <span class="token operator">=</span> gulp<span class="token punctuation">.</span><span class="token function">watch<span class="token punctuation">(</span></span><span class="token string">'templates/*.tmpl.html'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'build'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    watcher<span class="token punctuation">.</span><span class="token function">on<span class="token punctuation">(</span></span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Event type: '</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // added, changed, or deleted
-    </span>   console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Event path: '</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true"> // The path of the modified file
-    </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var watcher = gulp.watch('templates/*.tmpl.html', ['build']);
+watcher.on('change', function (event) {
+   console.log('Event type: ' + event.type); // added, changed, or deleted
+   console.log('Event path: ' + event.path); // The path of the modified file
+});
+```
 
 In addition to the `change` event, you can listen for a number of other events:
 
@@ -273,18 +304,20 @@ You can get Gulp to reload or update the browser when you — or, for that matte
 
 [LiveReload](http://livereload.com/)<sup class="po" id="note-19">[19](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#19)</sup> combines with browser extensions (including a [Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)<sup class="po" id="note-20">[20](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#20)</sup>) to reload your browser every time a change to a file is detected. It can be used with the [gulp-watch](https://www.npmjs.org/package/gulp-watch)<sup class="po" id="note-21">[21](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#21)</sup> plugin or with the built-in `gulp.watch()` that I described earlier. Here’s an example from the `README` file of the [gulp-livereload repository](https://github.com/vohof/gulp-livereload)<sup class="po" id="note-22">[22](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#22)</sup>:
 
-    <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        less <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-less'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        livereload <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-livereload'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        watch <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-watch'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulp = require('gulp'),
+    less = require('gulp-less'),
+    livereload = require('gulp-livereload'),
+    watch = require('gulp-watch');
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'less'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token string">'less/*.less'</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">watch<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">less<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>gulp<span class="token punctuation">.</span><span class="token function">dest<span class="token punctuation">(</span></span><span class="token string">'css'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">livereload<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gulp.task('less', function() {
+   gulp.src('less/*.less')
+      .pipe(watch())
+      .pipe(less())
+      .pipe(gulp.dest('css'))
+      .pipe(livereload());
+});
+```
 
 This will watch all files matching `less/*.less` for changes. When a change is detected, it will generate the CSS, save the files and reload the browser.
 
@@ -302,27 +335,31 @@ When you make changes to code, BrowserSync either reloads the page or, if it is 
 
 There isn’t actually a plugin for Gulp because BrowserSync doesn’t manipulate files, so it wouldn’t really work as one. However, the [BrowserSync module on npm](https://www.npmjs.org/package/browser-sync)<sup class="po" id="note-28">[28](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#28)</sup> can be called directly from Gulp. First, install it through npm:
 
-    npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev browser<span class="token operator">-</span>sync
+```js
+npm install --save-dev browser-sync
+```
 
 Then, the following `gulpfile.js` will start BrowserSync and watch some files:
 
-    <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        browserSync <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'browser-sync'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulp = require('gulp'),
+    browserSync = require('browser-sync');
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'browser-sync'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">var</span> files <span class="token operator">=</span> <span class="token punctuation">[</span>
-          'app<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>html'<span class="token punctuation">,</span>
-          'app<span class="token operator">/</span>assets<span class="token operator">/</span>css<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>css'<span class="token punctuation">,</span>
-          'app<span class="token operator">/</span>assets<span class="token operator">/</span>imgs<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>png'<span class="token punctuation">,</span>
-          'app<span class="token operator">/</span>assets<span class="token operator">/</span>js<span class="token comment" spellcheck="true">/**/</span><span class="token operator">*</span><span class="token punctuation">.</span>js'
-       <span class="token punctuation">]</span><span class="token punctuation">;</span>
+gulp.task('browser-sync', function () {
+   var files = [
+      'app/**/*.html',
+      'app/assets/css/**/*.css',
+      'app/assets/imgs/**/*.png',
+      'app/assets/js/**/*.js'
+   ];
 
-       browserSync<span class="token punctuation">.</span><span class="token function">init<span class="token punctuation">(</span></span>files<span class="token punctuation">,</span> <span class="token punctuation">{</span>
-          server<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-             baseDir<span class="token punctuation">:</span> <span class="token string">'./app'</span>
-          <span class="token punctuation">}</span>
-       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   browserSync.init(files, {
+      server: {
+         baseDir: './app'
+      }
+   });
+});
+```
 
 Running `gulp browser-sync` would then watch the matching files for changes and start a server that serves the files in the `app` directory.
 
@@ -336,45 +373,49 @@ The two most popular build tools in JavaScript are Grunt and Gulp. Grunt was [ve
 
 Grunt tasks tend to be over-configured, requiring a large object containing properties that you really wouldn’t want to have to care about, while the same task in Gulp might take up only a few lines. Let’s look at a simple `gruntfile.js` that defines a `css` task to convert our LESS to CSS and then run [Autoprefixer](https://github.com/ai/autoprefixer)<sup class="po" id="note-32">[32](http://www.smashingmagazine.com/2014/06/11/building-with-gulp/#32)</sup> on it:
 
-    grunt<span class="token punctuation">.</span><span class="token function">initConfig<span class="token punctuation">(</span></span><span class="token punctuation">{</span>
-       less<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          development<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-             files<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                <span class="token string">"build/tmp/app.css"</span><span class="token punctuation">:</span> <span class="token string">"assets/app.less"</span>
-             <span class="token punctuation">}</span>
-          <span class="token punctuation">}</span>
-       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+```js
+grunt.initConfig({
+   less: {
+      development: {
+         files: {
+            "build/tmp/app.css": "assets/app.less"
+         }
+      }
+   },
 
-       autoprefixer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-             browsers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'last 2 version'</span><span class="token punctuation">,</span> <span class="token string">'ie 8'</span><span class="token punctuation">,</span> <span class="token string">'ie 9'</span><span class="token punctuation">]</span>
-          <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          multiple_files<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-             expand<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-             flatten<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-             src<span class="token punctuation">:</span> <span class="token string">'build/tmp/app.css'</span><span class="token punctuation">,</span>
-             dest<span class="token punctuation">:</span> <span class="token string">'build/'</span>
-          <span class="token punctuation">}</span>
-       <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   autoprefixer: {
+      options: {
+         browsers: ['last 2 version', 'ie 8', 'ie 9']
+      },
+      multiple_files: {
+         expand: true,
+         flatten: true,
+         src: 'build/tmp/app.css',
+         dest: 'build/'
+      }
+   }
+});
 
-    grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks<span class="token punctuation">(</span></span><span class="token string">'grunt-contrib-less'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks<span class="token punctuation">(</span></span><span class="token string">'grunt-autoprefixer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grunt.loadNpmTasks('grunt-contrib-less');
+grunt.loadNpmTasks('grunt-autoprefixer');
 
-    grunt<span class="token punctuation">.</span><span class="token function">registerTask<span class="token punctuation">(</span></span><span class="token string">'css'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'less'</span><span class="token punctuation">,</span> <span class="token string">'autoprefixer'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grunt.registerTask('css', ['less', 'autoprefixer']);
+```
 
 Compare this to the `gulpfile.js` file that does the same:
 
-    <span class="token keyword">var</span> gulp <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-       less <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-less'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-       autoprefix <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'gulp-autoprefixer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+```js
+var gulp = require('gulp'),
+   less = require('gulp-less'),
+   autoprefix = require('gulp-autoprefixer');
 
-    gulp<span class="token punctuation">.</span><span class="token function">task<span class="token punctuation">(</span></span><span class="token string">'css'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       gulp<span class="token punctuation">.</span><span class="token function">src<span class="token punctuation">(</span></span><span class="token string">'assets/app.less'</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">less<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span><span class="token function">autoprefix<span class="token punctuation">(</span></span><span class="token string">'last 2 version'</span><span class="token punctuation">,</span> <span class="token string">'ie 8'</span><span class="token punctuation">,</span> <span class="token string">'ie 9'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-          <span class="token punctuation">.</span><span class="token function">pipe<span class="token punctuation">(</span></span>gulp<span class="token punctuation">.</span><span class="token function">dest<span class="token punctuation">(</span></span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gulp.task('css', function () {
+   gulp.src('assets/app.less')
+      .pipe(less())
+      .pipe(autoprefix('last 2 version', 'ie 8', 'ie 9'))
+      .pipe(gulp.dest('build'));
+});
+```
 
 The `gulpfile.js` version is considerably more readable and smaller.
 
