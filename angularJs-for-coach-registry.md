@@ -1,0 +1,1 @@
+## AngularJs used in coach registry page
