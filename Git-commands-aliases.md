@@ -42,7 +42,7 @@ Or Add the following to the '.gitconfig' file in your HOME directory(where git p
 
 ### For Linux/Unix users:
 
-    For Linux you need write the following code at the end in the '.bashrc' file in your home directory.
+For Linux you need write the following code at the end in the '.bashrc' file in your home directory.
 
     alias gst='git status'
 
