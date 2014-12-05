@@ -6,7 +6,7 @@ You just need to create an aliases for the existing commands and it will work as
 
 The way of creating aliases is different in Windows and Unix. Let's see the both approaches.
 
-## Common aliases
+## Common Aliases
 
 ### For Windows users:
 
