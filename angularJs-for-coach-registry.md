@@ -90,17 +90,18 @@ Attach below css
 ```
 
 
-### Custom Scroller
-Added customscrollbar to ‘#tabs’ coaches listing inside searchName function.
+### Scroll Lock Functionality
+Added below script to ‘#tabs’ coaches listing inside searchName function.
 ##### JS:
 ```javascript
-	angular.element("#tabs").mCustomScrollbar({
-       	scrollInertia:2500,
-        mouseWheel:{
-            preventDefault:true,
-        	normalizeDelta:true
-        },
-        advanced:{ updateOnContentResize: true}
-	});
+	angular.element('#tabs').scrollTop(0);
+    var tabs =angular.element("#tabs"),
+    height= tabs.height(),
+    scrollHeight=tabs.get(0).scrollHeight;
+    tabs.bind('mousewheel', function(e,d){
+        if((this.scrollTop===(scrollHeight-height) &&d <0) ||(this.scrollTop===0 && d> 0)){
+            e.preventDefault();
+        }
+    })
 ```
 
