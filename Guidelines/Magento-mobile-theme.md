@@ -14,10 +14,10 @@
 
 3. Copied all the folders from ‘iphone’ theme from default package to newly created theme ‘ebmobile’.
 
-4.steps 1 to 3 followed for skin.
-  created package : path: skin/frontend/mobile
-  created theme: path:skin/frontend/mobile/ebmobile
-  and copied the folders from iphone theme into ‘ebmobile’.
+4. steps 1 to 3 followed for skin.
+   created package : path: skin/frontend/mobile
+   created theme: path:skin/frontend/mobile/ebmobile
+   and copied the folders from iphone theme into ‘ebmobile’.
 
 5. For backend modifications did as follows:
    path:system -> configurations ->design.
