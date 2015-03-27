@@ -1,6 +1,6 @@
-Steps for Installing Magento theme using Magento Connect
+#Steps for Installing Magento theme using Magento Connect
 
-#There are two methods to install themes in Magento :
+There are two methods to install themes in Magento :
 
 ###METHOD I. Installing theme via Magento Connect .
 ###METHOD II. Install via placing appropriate theme template folders in your Magento Installation. ( We use this method)
@@ -36,18 +36,22 @@ Steps for Installing Magento theme using Magento Connect
 
   ![alt tag](/images/Magento-images/i7.jpg)
 
-Here extension dependencies will be seen and then you click on proceed button
+  Here extension dependencies will be seen and then you click on proceed button
 
-8. After clicking on proceed  after a few seconds to display magento theme installed successfully message and click Refresh Button as seen below.
+8. After clicking on proceed  after a few seconds to display magento theme 
+   installed successfully message and click Refresh Button as seen below.
 
   ![alt tag](/images/Magento-images/i8.jpg)
 
-9. After refreshing the page return to Admin by clicking on return to Admin link or enter url localhost/magento-folder-name/index.php/admin. 
- Then go to System → Design and click on Add Design Change Button as below
+9. After refreshing the page return to Admin by clicking on return to Admin link
+   or enter url localhost/magento-folder-name/index.php/admin. Then go to 
+   System → Design and click on Add Design Change Button as below
 
   ![alt tag](/images/Magento-images/i9.jpg)
 
-10. As in the image below select Custom Design tab in dropdown list and select your installed new theme eg. f002(magento Classic theme) and click on save button.
+10. As in the image below select Custom Design tab in dropdown list and select
+    your installed new theme eg. f002(magento Classic theme) and click on save 
+    button.
 
   ![alt tag](/images/Magento-images/i10.jpg)
 
@@ -57,21 +61,24 @@ Here extension dependencies will be seen and then you click on proceed button
 
 ###METHOD II. Install via placing appropriate theme template folders in your Magento Installation.
 
-1.  Select the theme which you want to download and download it's zip file.
+1. Select the theme which you want to download and download it's zip file.
 
   ![alt tag](/images/Magento-images/i12.jpg)
 
 2. Unzip the zip file and rename the file (eg. mMagezon)
 
-3. go to mMagezon → app rename it with the same name as the unzipped folder name i.e. mMageZon and place it in magento_installation folder/apps/design/frontend/mMageZon(create a new folder which will be package)/mMagezon (create a new folder which will be theme)/ layout and template 
+3. Go to mMagezon → app rename it with the same name as the unzipped folder name
+   i.e. mMageZon and place it in magento_installation folder/apps/design/frontend/mMageZon(create a new folder which will be package)/mMagezon (create a new folder which will be theme)/ layout and template 
 
   ![alt tag](/images/Magento-images/i13.jpg)
 
-4.  go to mMagezon →skin rename it with the same name as the unzipped folder i.e. mMageZon and place it in magento_installation_folder/skin/frontend/mMagezon(create a new folder which will be package)/mMagezon (create a new folder which will be theme)/ css, Images,js etc.
+4. Go to mMagezon →skin rename it with the same name as the unzipped folder i.e. mMageZon and place
+    it in magento_installation_folder/skin/frontend/mMagezon(create a new folder which will be package)/mMagezon (create a new folder which will be theme)/ css, Images,js etc.
 
   ![alt tag](/images/Magento-images/i14.jpg)
 
-5. Open Admin Panel and go to CMS → Pages select home page and then go to->Design ->custom Layout → mMagezon .
+5. Open Admin Panel and go to CMS → Pages select home page and then go 
+   to->Design ->custom Layout → mMagezon .
 
   ![alt tag](/images/Magento-images/i15.jpg)
 
