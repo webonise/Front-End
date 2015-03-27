@@ -9,7 +9,7 @@ Steps for Installing Magento theme using Magento Connect
 
 1. Select any free magento theme and click on install now.
 
-  ![alt tag](/images/magento-images/i1.jpg)
+  ![alt tag](/../images/magento-images/i1.jpg)
 
 2. After you click on install now you need to select Magento Connect 1.0 or2.0(depending upon your Magento version)(select 2.0 is version is above 1.5) and click the Check Box I Agree to the Extension licence agreement and click on Get Extension Key Button as below.
 
