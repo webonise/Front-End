@@ -6,13 +6,13 @@
 
   2. After Installing XAMPP start Apache and MySQL 
 
-  ![alt tag](../images/magento-images/img1.jpg)
+  ![alt tag](/images/Magento-images/img1.jpg)
 
   3.After starting Apache and MySQL download Magento from   http://www.magentocommerce.com/download (you need to log in into Magento to   download Magento)
 
   4. You will be directed to the following screen .
 
-  ![alt tag](/images/magento-images/img2.jpg)
+  ![alt tag](images/Magento-images/img2.jpg)
 
   5. Select appropriate latest version of Magento and download the zip file.
 
