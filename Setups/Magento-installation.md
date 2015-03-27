@@ -10,7 +10,7 @@
 
   3.After starting Apache and MySQL download Magento from   http://www.magentocommerce.com/download (you need to log in into Magento to   download Magento)
 
-  4. You will be directed to the following screen .
+  4. You will be directed to the following screen.
 
   ![alt tag](/images/Magento-images/img2.jpg)
 
