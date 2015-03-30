@@ -23,7 +23,7 @@ CMS Tab. You can preview your newly created page by licking on **Preview** link 
 
   ![alt tag](/images/Magento-images/cms5.jpg)
 
-7.Goto Admin panel → System → Cache Management and click on Flush Magento Cache button. You need to do this to clear the cache and for your changes to get reflected. Your link to Services page will appear on your main navigation bar.
+7.Goto Admin panel → System → Cache Management and click on Flush Magento Cache button. You need to do this to clear the cache and for your changes to get reflected.
 
   ![alt tag](/images/Magento-images/cms6.jpg)
 
