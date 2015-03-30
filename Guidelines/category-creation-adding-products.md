@@ -42,7 +42,7 @@
 
   ![alt tag](/images/Magento-images/cat7.jpg)
 
-  d) Images -  Select the appropriate image for the product by clicking on browse files and then upload that image by clicking on upload files button. Roll over on the image  and select all the radio buttons for base image, small image and thumbnail and give a label for the product. If no image is selected then no image will be displayed. Then click on save and continue to edit button.
+  d) Images -  Select the appropriate image for the product by clicking on browse files and then upload that image by clicking on upload files button. Roll over on the image  and select all the radio buttons for base image, small image and thumbnail and give a label for the product. If no image is selected then default Magento product image will be displayed. Then click on save and continue to edit button.
 
   ![alt tag](/images/Magento-images/cat8.jpg)
 
