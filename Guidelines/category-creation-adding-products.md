@@ -1,4 +1,4 @@
-#Adding Categories and Products and showing them on Homepage in Magento
+#Adding Categories and Products and showing them on Frontend in Magento
 
 1. Go to Admin panel -> Catalog -> Manage Categories
 
