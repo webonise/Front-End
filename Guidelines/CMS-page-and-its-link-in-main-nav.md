@@ -19,8 +19,7 @@ CMS Tab. You can preview your newly created page by licking on **Preview** link 
 
   ![alt tag](/images/Magento-images/cms4.jpg)
 
-6.Now you need to add your page in top.phtml file manually as my Main Nav is present in that file so that you will see a link to services page in main navigation bar.
-**(In this case got to)C:\xampp\htdocs\magentodemo\app\design\frontend\testLayout\testLayout\template\catalog\navigation\top.phtml** And add one extra li for Services and save top.phtml
+6.Now you need to add your page in top.phtml file manually as my Main Nav is present in that file so that you will see a link to services page in main navigation bar. **(In This case go to)C:\xampp\htdocs\magentodemo\app\design\frontend\testLayout\testLayout\template\catalog\navigation\top.phtml** And add one extra li for Services and save top.phtml
 
   ![alt tag](/images/Magento-images/cms5.jpg)
 
