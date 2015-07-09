@@ -6,9 +6,9 @@ Below are the files and folders which are included in the main directory of Mage
 
 
 ###.htaccess
-This contains mod_rewrite rules, which are essential for the Search Engine Friendly URLs.
-Here you can also find standard web server and php directives that can improve your website performance.
-In short this focuses on site speed, security and SEO.
+    This contains mod_rewrite rules, which are essential for the Search Engine Friendly URLs.
+    Here you can also find standard web server and php directives that can improve your website performance.
+    In short this focuses on site speed, security and SEO.
 
 ###.htaccess.sample
 This is a backup of the .htaccess file.This file can be used to restore the default settings if you modify .htaccess
